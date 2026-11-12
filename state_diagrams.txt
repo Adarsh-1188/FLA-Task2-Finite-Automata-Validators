@@ -1,0 +1,51 @@
+ATM PIN DFA
+
+        digit        digit        digit        digit
+   ->  (q0) ------> (q1) ------> (q2) ------> (q3) ------> ((q4))
+                                                              ACCEPT
+
+q0 = start
+q4 = accepting state
+Any invalid symbol or extra fifth digit = REJECT
+
+
+PASSWORD – CONCEPTUAL PRODUCT DFA
+
+Track:
+L = length status
+U = uppercase seen
+l = lowercase seen
+D = digit seen
+S = special character seen
+
+Accept only when:
+8 <= length <= 16
+AND U = 1
+AND l = 1
+AND D = 1
+AND S = 1
+AND no whitespace
+
+
+EMAIL – CONCEPTUAL AUTOMATON
+
+(start)
+   |
+   | alphanumeric
+   v
+(local characters)*
+   |
+   | @
+   v
+(domain start)
+   |
+   | domain characters
+   v
+(domain)
+   |
+   | .
+   v
+(TLD: 2+ letters)
+   |
+   v
+ACCEPT
